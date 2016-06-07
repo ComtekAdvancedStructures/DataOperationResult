@@ -7,7 +7,7 @@ namespace Comtek
 {
     /// <summary>
     ///     A generic object to return after performing a data operation
-    /// </summary>
+    /// </summary> 
     public class DataOperationResult
     {
         public DataOperationResult()
