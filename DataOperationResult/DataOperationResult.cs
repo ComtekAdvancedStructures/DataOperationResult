@@ -138,6 +138,11 @@ namespace Comtek
     {
         public T Model { get; set; }
 
+        public DataOperationResult() : base()
+        {
+            
+        }
+
         public DataOperationResult(T obj) : base()
         {
             Model = obj;
