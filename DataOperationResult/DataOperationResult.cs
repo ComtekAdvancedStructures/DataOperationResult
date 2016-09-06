@@ -10,12 +10,6 @@ namespace Comtek
     /// </summary>
     public class DataOperationResult
     {
-        public DataOperationResult()
-        {
-            Success = true;
-            Messages = new List<string>();
-        }
-
         public bool Success { get; set; }
         public List<string> Messages { get; set; }
 
@@ -25,6 +19,17 @@ namespace Comtek
             {
                 return Messages.Aggregate("", (current, message) => current + message);
             }
+        }
+
+        public DataOperationResult()
+        {
+            Success = true;
+            Messages = new List<string>();
+        }
+        public DataOperationResult(Exception exception) : this()
+        {
+            Success = false;
+            AddMessage(exception);
         }
 
         public void AddMessages(List<string> messages)
@@ -131,13 +136,12 @@ namespace Comtek
     /// </summary>
     public class DataOperationResult<T> : DataOperationResult
     {
-        public DataOperationResult()
-        {
-            Success = true;
-            Messages = new List<string>();
-        }
-
         public T Model { get; set; }
+
+        public DataOperationResult(T obj) : base()
+        {
+            Model = obj;
+        }
     }
 
 }
