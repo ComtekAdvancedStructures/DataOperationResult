@@ -4,7 +4,7 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Craig Verburgh</authors>
+    <authors>Craig Verburgh, Cameron Hurst</authors>
     <owners>Comtek Advanced Structures</owners>
     <licenseUrl>http://www.comtekadvanced.com</licenseUrl>
     <projectUrl>https://www.github.com/comtekadvanced</projectUrl>

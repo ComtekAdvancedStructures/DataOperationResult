@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Comtek.Helpers;
 
 namespace Comtek
 {
@@ -88,9 +87,24 @@ namespace Comtek
         /// <param name="e">Exception</param>
         public void AddExceptionMessage(Exception e)
         {
-            var msg = ErrorHelper.GetExceptionMessage(e);
+            var msg = GetExceptionMessage(e);
 
             Messages.Add(msg);
+        }
+
+        private static string GetExceptionMessage(Exception ex)
+        {
+            while (true)
+            {
+                if (ex.InnerException != null)
+                {
+                    return GetExceptionMessage(ex.InnerException);
+                }
+
+                var msg = ex.Message;
+
+                return msg;
+            }
         }
 
         /// <summary>
@@ -138,12 +152,12 @@ namespace Comtek
     {
         public T Model { get; set; }
 
-        public DataOperationResult() : base()
+        public DataOperationResult()
         {
             
         }
 
-        public DataOperationResult(T obj) : base()
+        public DataOperationResult(T obj)
         {
             Model = obj;
         }
