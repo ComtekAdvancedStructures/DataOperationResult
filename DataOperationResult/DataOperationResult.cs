@@ -161,6 +161,20 @@ namespace Comtek
         {
             Model = obj;
         }
+
+        /// <summary>
+        ///     Add another DataOperationResult to this one
+        /// </summary>
+        /// <param name="otherResult">The additional result to merge</param>
+        public void MergeDataOperationResult(DataOperationResult<T> otherResult)
+        {
+            Messages.AddRange(otherResult.Messages);
+            // If the current success is false, leave it like that
+            // otherwise update it from the other result
+            if (Success) Success = otherResult.Success;
+            Model = otherResult.Model;
+        }
+
     }
 
 }

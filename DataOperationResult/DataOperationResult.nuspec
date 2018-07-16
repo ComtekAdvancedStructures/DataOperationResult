@@ -11,8 +11,8 @@
     <iconUrl>http://www.comtekadvanced.com</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A class for returning descriptive results after performing a data operation</description>
-    <releaseNotes>Initial Release</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <releaseNotes>Updated Merge-T- method to copy over Model of OtherResult</releaseNotes>
+    <copyright>Copyright 2018</copyright>
     <tags>DataOperationResult data operation result</tags>
   </metadata>
 </package>
